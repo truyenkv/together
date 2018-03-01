@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<h1>This is the Article list</h1>
+		<div class="articles">
+			{% for article in articles %}
+				<div class="article">
+					<h2><a href="{% url 'detail' slug=article.slug %}">{{article.title}}</a></h2>
+					<!--snippet goi tu models de ay ra 50 ki tu-->
+					<p>{{article.snippet}}</p>
+					<p>{{article.date}}</p>
+				</div>
+			{% endfor %}
+		</div>
+{% endblock %}
